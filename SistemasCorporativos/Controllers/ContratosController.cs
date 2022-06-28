@@ -61,4 +61,42 @@ public class ContratosController : ControllerBase
         .Include(contrato => contrato.Situacao)
         .Include(contrato => contrato.TipoConta)
         .ToListAsync());
+
+    [HttpPut]
+    [Route("cancelar/{id}")]
+    public async Task<IActionResult> ContractCancel([FromRoute] int id)
+    {
+        Contrato contrato = await _context.Contratos.FindAsync(id);
+
+        contrato.SituacaoId = 2;
+        contrato.ValorTotal = 0;
+
+        _context.Contratos.Update(contrato);
+
+        List<Conta> contas = _context.Contas.Where(x => x.ContratoId == contrato.ContratoId).ToList();
+        List<Conta> contasTable = new();
+        List<Movimentacao> movimentacoesTable = new();
+        
+        foreach (var conta in contas)
+        {
+            conta.Valor = 0;
+            conta.DataPagamento = DateTime.Now;
+            conta.SituacaoId = 2;
+            
+            contasTable.Add(conta);
+
+            var movimentacao = _context.Movimentacoes.FirstOrDefault(x => x.ContaId == conta.ContaId);
+            movimentacao.TipoMovimentacaoId = 4;
+            movimentacao.ValorMovimentacao = 0;
+            movimentacao.DataMovimento = DateTime.Now;
+
+            movimentacoesTable.Add(movimentacao);
+        }
+        
+        _context.Movimentacoes.UpdateRange(movimentacoesTable);
+        _context.Contas.UpdateRange(contasTable);
+        await _context.SaveChangesAsync();
+
+        return Ok(contrato);
+    } 
 }
