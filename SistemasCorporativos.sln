@@ -1,6 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemasCorporativos", "SistemasCorporativos\SistemasCorporativos.csproj", "{4214FF55-8037-4239-AE0F-16165852D3B0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounting", "Accounting", "{3E70EF98-D2DA-439F-A5D8-FA6253D792F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{92A3F748-B975-494D-9DCF-BDFD8939E5A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounting.Domain", "Accounting.Domain\Accounting.Domain.csproj", "{22E22F38-0FAF-4E01-96A1-0A484B676B3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounting.Infra", "Accounting.Infra\Accounting.Infra.csproj", "{DEF8FC5C-4334-47C5-8E3B-72177D5828E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounting.Tests", "Accounting.Tests\Accounting.Tests.csproj", "{E7808A81-AEEC-49A9-B753-F19DDCA38C75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemasCorporativos.Api", "SistemasCorporativos.Api\SistemasCorporativos.Api.csproj", "{0E0F2A52-135C-4376-A3D2-A285FC002710}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Global", "Global", "{7A166129-BE8A-4902-9025-EDE5E43D8ABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Global.Shared", "Global.Shared\Global.Shared.csproj", "{02B2FE0B-6B31-4957-B50C-03F18DE5A95F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +22,32 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4214FF55-8037-4239-AE0F-16165852D3B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4214FF55-8037-4239-AE0F-16165852D3B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4214FF55-8037-4239-AE0F-16165852D3B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4214FF55-8037-4239-AE0F-16165852D3B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E22F38-0FAF-4E01-96A1-0A484B676B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E22F38-0FAF-4E01-96A1-0A484B676B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E22F38-0FAF-4E01-96A1-0A484B676B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E22F38-0FAF-4E01-96A1-0A484B676B3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEF8FC5C-4334-47C5-8E3B-72177D5828E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEF8FC5C-4334-47C5-8E3B-72177D5828E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEF8FC5C-4334-47C5-8E3B-72177D5828E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEF8FC5C-4334-47C5-8E3B-72177D5828E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7808A81-AEEC-49A9-B753-F19DDCA38C75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7808A81-AEEC-49A9-B753-F19DDCA38C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7808A81-AEEC-49A9-B753-F19DDCA38C75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7808A81-AEEC-49A9-B753-F19DDCA38C75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E0F2A52-135C-4376-A3D2-A285FC002710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E0F2A52-135C-4376-A3D2-A285FC002710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E0F2A52-135C-4376-A3D2-A285FC002710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E0F2A52-135C-4376-A3D2-A285FC002710}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02B2FE0B-6B31-4957-B50C-03F18DE5A95F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B2FE0B-6B31-4957-B50C-03F18DE5A95F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02B2FE0B-6B31-4957-B50C-03F18DE5A95F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B2FE0B-6B31-4957-B50C-03F18DE5A95F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22E22F38-0FAF-4E01-96A1-0A484B676B3C} = {3E70EF98-D2DA-439F-A5D8-FA6253D792F6}
+		{DEF8FC5C-4334-47C5-8E3B-72177D5828E6} = {3E70EF98-D2DA-439F-A5D8-FA6253D792F6}
+		{E7808A81-AEEC-49A9-B753-F19DDCA38C75} = {3E70EF98-D2DA-439F-A5D8-FA6253D792F6}
+		{0E0F2A52-135C-4376-A3D2-A285FC002710} = {92A3F748-B975-494D-9DCF-BDFD8939E5A4}
+		{02B2FE0B-6B31-4957-B50C-03F18DE5A95F} = {7A166129-BE8A-4902-9025-EDE5E43D8ABB}
 	EndGlobalSection
 EndGlobal
