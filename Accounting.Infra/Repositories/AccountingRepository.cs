@@ -1,6 +1,13 @@
-﻿namespace Accounting.Infra.Repositories;
+﻿using Global.Shared.Repository;
+using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Configuration;
 
-public class AccountingRepository
+namespace Accounting.Infra.Repositories;
+
+public class AccountingRepository : BaseRepository
 {
-    
+    public AccountingRepository(IConfiguration config)
+    {
+        InitConnection(config);
+    }
 }

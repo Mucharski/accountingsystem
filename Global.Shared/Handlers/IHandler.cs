@@ -1,6 +1,8 @@
-﻿namespace Global.Shared.Handlers;
+﻿using SistemasCorporativos.Entities;
+
+namespace Global.Shared.Handlers;
 
 public interface IHandler<T>
 {
-    Task<T> Handle(T command);
+    Task<GenericApiResponse<T>> Handle(T command);
 }
