@@ -19,4 +19,10 @@
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Accounting.Domain\Accounting.Domain.csproj" />
+      <ProjectReference Include="..\Accounting.Infra\Accounting.Infra.csproj" />
+      <ProjectReference Include="..\Global.Shared\Global.Shared.csproj" />
+    </ItemGroup>
 </Project>

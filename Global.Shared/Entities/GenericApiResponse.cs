@@ -1,4 +1,4 @@
-﻿namespace SistemasCorporativos.Entities;
+﻿namespace Global.Shared.Entities;
 
 public class GenericApiResponse<T>
 {

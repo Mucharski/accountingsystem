@@ -2,5 +2,5 @@
 
 public interface IAccountingRepository
 {
-    
+    public void CreateAccountType(string name);
 }

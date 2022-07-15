@@ -12,7 +12,7 @@ public abstract class BaseRepository
 
     private static void SqliteConnection(IConfiguration config)
     {
-        string connString = $"Data Source={config.GetConnectionString("Sqlite")}; Version=3;";
+        string connString = $"Data Source={config.GetConnectionString("Sqlite")};";
         ConnSqlite = connString;
     }
 
