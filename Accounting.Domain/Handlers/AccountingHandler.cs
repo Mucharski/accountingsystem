@@ -16,7 +16,12 @@ public class AccountingHandler : IAccountingHandler
 
     public async Task<GenericApiResponse<string>> Handle(CreateAccountTypeCommand command)
     {
-        _repository.CreateAccountType(command.Name);
+        int rowsInserted = await _repository.CreateAccountType(command.Name);
+
+        if (rowsInserted == 0)
+        {
+            return new GenericApiResponse<string>("Houve um erro ao inserir o registro.", false, "Error");
+        }
         
         return new GenericApiResponse<string>("Funcionou!", true, "Dados obtidos com sucesso!");
     }

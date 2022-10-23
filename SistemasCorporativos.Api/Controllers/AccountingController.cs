@@ -2,7 +2,6 @@
 using Accounting.Domain.Handlers.Interfaces;
 using Global.Shared.Entities;
 using Microsoft.AspNetCore.Mvc;
-using SistemasCorporativos.Entities;
 
 namespace SistemasCorporativos.Controllers;
 

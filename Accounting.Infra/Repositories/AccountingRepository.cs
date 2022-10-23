@@ -1,4 +1,5 @@
 ﻿using Accounting.Domain.Repositories.Interfaces;
+using Accounting.Infra.Queries;
 using Dapper;
 using Global.Shared.Repository;
 using Microsoft.Data.Sqlite;
@@ -8,17 +9,19 @@ namespace Accounting.Infra.Repositories;
 
 public class AccountingRepository : BaseRepository, IAccountingRepository
 {
-    public AccountingRepository(IConfiguration config)
+    private readonly AccountingQueries _queries;
+    public AccountingRepository(IConfiguration config, AccountingQueries queries)
     {
         InitConnection(config);
+        _queries = queries;
     }
 
-    public async void CreateAccountType(string name)
+    public async Task<int> CreateAccountType(string name)
     {
         await using SqliteConnection conn = new(ConnSqlite);
         await conn.OpenAsync();
 
-        await conn.ExecuteAsync("INSERT INTO account_type (name) VALUES (@Name)", new
+        return await conn.ExecuteAsync(_queries.CreateAccountType(), new
         {
             Name = name
         });

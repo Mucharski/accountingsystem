@@ -2,5 +2,5 @@
 
 public interface IAccountingRepository
 {
-    public void CreateAccountType(string name);
+    public Task<int> CreateAccountType(string name);
 }
