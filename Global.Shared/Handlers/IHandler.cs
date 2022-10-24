@@ -3,7 +3,7 @@ using Global.Shared.Entities;
 
 namespace Global.Shared.Handlers;
 
-public interface IHandler<T, R> where T : ICommand
+public interface IHandler<T> where T : ICommand
 {
-    Task<GenericApiResponse<R>> Handle(T command);
+    Task<IGenericApiResponse> Handle(T command);
 }

@@ -1,5 +1,6 @@
 ﻿using Accounting.Domain.Commands;
 using Accounting.Domain.Handlers.Interfaces;
+using Global.Shared;
 using Global.Shared.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,10 +22,10 @@ public class AccountingController : ControllerBase
 
     [HttpPost]
     [Route("account/createType")]
-    public async Task<ActionResult<GenericApiResponse<string>>> Teste([FromServices] IAccountingHandler handler,
+    public async Task<ActionResult<IGenericApiResponse>> Teste([FromServices] IAccountingHandler handler,
         [FromBody] CreateAccountTypeCommand cmd)
     {
-        GenericApiResponse<string> genericApiResponse = await handler.Handle(cmd);
+        IGenericApiResponse genericApiResponse = await handler.Handle(cmd);
 
         return Ok(genericApiResponse);
     }

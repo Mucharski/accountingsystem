@@ -1,6 +1,7 @@
 ﻿using Accounting.Domain.Commands;
 using Accounting.Domain.Handlers.Interfaces;
 using Accounting.Domain.Repositories.Interfaces;
+using Global.Shared;
 using Global.Shared.Entities;
 
 namespace Accounting.Domain.Handlers;
@@ -14,8 +15,15 @@ public class AccountingHandler : IAccountingHandler
         _repository = repository;
     }
 
-    public async Task<GenericApiResponse<string>> Handle(CreateAccountTypeCommand command)
+    public async Task<IGenericApiResponse> Handle(CreateAccountTypeCommand command)
     {
+        command.Validate();
+        
+        if (!command.IsValid)
+        {
+            return new InvalidCommandData(command.ErrorsList);
+        }
+        
         int rowsInserted = await _repository.CreateAccountType(command.Name);
 
         if (rowsInserted == 0)

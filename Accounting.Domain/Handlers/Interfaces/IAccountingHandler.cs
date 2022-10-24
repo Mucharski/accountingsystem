@@ -3,6 +3,6 @@ using Global.Shared.Handlers;
 
 namespace Accounting.Domain.Handlers.Interfaces;
 
-public interface IAccountingHandler : IHandler<CreateAccountTypeCommand, string>
+public interface IAccountingHandler : IHandler<CreateAccountTypeCommand>
 {
 }

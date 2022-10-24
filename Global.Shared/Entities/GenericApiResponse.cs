@@ -1,6 +1,6 @@
 ﻿namespace Global.Shared.Entities;
 
-public class GenericApiResponse<T>
+public class GenericApiResponse<T> : IGenericApiResponse
 {
     public GenericApiResponse(T data, bool success, string message)
     {
